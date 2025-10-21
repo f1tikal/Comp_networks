@@ -141,6 +141,9 @@ class Passenger_Ship extends Ship{
         this.moshnost*=multiplier;
         System.out.println("You're upgrade your vehicle");
     }
+    void getPriceOfTicket(){
+        System.out.println("Price of tickets: "+this.seats*10);
+    }
 
 }
 class War_Ships extends Ship{
@@ -185,13 +188,20 @@ class War_Ships extends Ship{
         this.distance-=this.weapons/3;
         System.out.println("Downgraded");
     }
+    void nitro(){
+        this.speed*=3;
+    }
 }
 
 
 public class Main {
     public static void main(String[] args) {
-
-
-
+        Passenger_Ship ship1=new Passenger_Ship("Ship",12,20,20,2,2,30,3,50);
+        ship1.getMorePassangers(2);
+        System.out.println(ship1.saved());
+        ship1.print();
+        ship1.crush();
+        War_Ships ship2=new War_Ships("asd",13,50,50,4,4,4,3);
+        ship2.canFire(40,40);
     }
 }
